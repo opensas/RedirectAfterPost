@@ -17,8 +17,8 @@ public class Redirected extends Controller {
     
     public static void save(@Valid User user) {
     	if (validation.hasErrors()) {
-    		params.flash();			//guardo en el flash los parámetros posteados
-    		validation.keep();		//guardo los errores para el próximo request, los guarda en cookies
+    		params.flash();			// guardo en el flash los parámetros posteados
+    		validation.keep();		// guardo los errores para el próximo request, los guarda en cookies
     		add(user);              // hago un redirect a la action form
     	}
     	user.save();
