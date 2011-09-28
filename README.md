@@ -1,4 +1,4 @@
-# Ejemplo de validación de formularios con Play! framework
+# Validación de formularios con Play! framework
 
 ## Ventajas y desventajas de utilizar REFRESH AFTER POST para validar errores
 
