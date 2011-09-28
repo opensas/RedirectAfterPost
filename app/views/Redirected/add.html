@@ -1,0 +1,28 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<h1>crear un nuevo usuario</h1>
+(CON redirect after post)
+<hr />
+
+#{ifErrors}
+    <p>se han encontrado errores</p>
+    <ul>
+    #{errors}
+        <li>${error}</li>
+    #{/errors}
+    </ul>
+#{/ifErrors}
+
+<form method="POST" action="@{save()}">
+    <label for="user.name">nombre</label>
+    <input type="text" name="user.name" value="${flash['user.name']}"><br />
+
+    <label for="user.surname">apellido</label>
+    <input type="text" name="user.surname" value="${flash['user.surname']}"><br />
+    
+    <input type="submit" value="grabar">
+    o
+    #{a @Application.list()}cancelar#{/a}
+
+</form>

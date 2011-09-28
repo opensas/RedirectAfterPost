@@ -1,0 +1,30 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<h1>Usuarios</h1>
+
+#{if users}
+    <table border="1">
+        <thead>
+            <th>id</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+        </thead>
+    #{list users}
+        <tr>
+            <td>${_.id}</td>
+            <td>${_.name}</td>
+            <td>${_.surname}</td>
+        </tr>
+    #{/list}
+    </table>
+#{/if}
+#{else}
+<p>No hay ningún usuario.</p>
+#{/else}
+
+<hr />
+#{a @Redirected.add()}nuevo usuario (CON redirect after POST)#{/a}<br />
+#{a @Rendered.add()}nuevo usuario (SIN redirect after POST)#{/a}
+<hr />
+#{a @clear()}eliminar todos#{/a}
